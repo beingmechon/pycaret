@@ -220,7 +220,7 @@ class DashboardLogger:
             )
             experiment.save_model(
                 experiment.pipeline,
-                os.path.join(tmpdir, "Transformation Pipeline"),
+                os.path.join(tmpdir, "Transformation_Pipeline"),
                 verbose=False,
             )
             console.info(
@@ -228,7 +228,7 @@ class DashboardLogger:
             )
             [
                 logger.log_artifact(
-                    os.path.join(tmpdir, "Transformation Pipeline.pkl"),
+                    os.path.join(tmpdir, "Transformation_Pipeline.pkl"),
                     "transformation_pipe",
                 )
                 for logger in self.loggers
@@ -236,7 +236,7 @@ class DashboardLogger:
 
             # Log pandas profile
             if log_profile:
-                profile_path = os.path.join(tmpdir, "Data Profile.html")
+                profile_path = os.path.join(tmpdir, "Data_Profile.html")
                 experiment.report.to_file(profile_path)
                 [
                     logger.log_artifact(profile_path, "data_profile")
